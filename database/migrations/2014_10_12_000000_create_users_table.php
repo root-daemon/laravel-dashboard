@@ -17,6 +17,11 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('email')->unique();
+            $table->integer('client_id');
+            $table->integer('mobile_number');
+            $table->string('imeinum')->unique();
+            $table->string('current_plan');
+            $table->string('upcoming_plan')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
