@@ -20,8 +20,8 @@ class CreateUsersTable extends Migration
             $table->integer('client_id');
             $table->integer('mobile_number');
             $table->string('imeinum')->unique();
-            $table->string('current_plan');
-            $table->string('upcoming_plan')->nullable();
+            //$table->string('current_plan');
+            //$table->string('upcoming_plan')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
