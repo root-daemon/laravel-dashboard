@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -13,5 +14,6 @@ class DatabaseSeeder extends Seeder
     {
         //$this->call(AdminTableSeeder::class);
         $this->call(PlanTableSeeder::class);
+        //$this->call(UserTableSeeder::class);
     }
 }
