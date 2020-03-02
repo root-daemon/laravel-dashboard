@@ -14,7 +14,7 @@ class PlanTableSeeder extends Seeder
     public function run()
     {
         CurrentPlans::create([
-            'user_id'=>1,
+            'client_id'=>12121212,
             'activated_date'=>Carbon::parse('2020-3-2'),
             'deactivated_date'=>Carbon::parse('2020-3-2'),
 

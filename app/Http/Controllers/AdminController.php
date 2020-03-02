@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\User;
 use Illuminate\Http\Request;
 use Auth;
 class AdminController extends Controller
@@ -28,5 +28,10 @@ class AdminController extends Controller
     public function logout(Request $request) {
         Auth::logout();
         return redirect('/login');
+      }
+      public function ShowUserPlans(Request $request, $client_id){
+        $user = User::find($client_id);
+        dd($user->Plans());
+        return true;
       }
 }

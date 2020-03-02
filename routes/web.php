@@ -22,6 +22,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
     Route::get('/admin/login','Auth\AdminLoginController@showLoginForm')->name('admin.login');
     Route::post('/admin/login','Auth\AdminLoginController@login')->name('admin.login.submit');
-    Route::get('/admin', 'AdminController@index')->name('admin');
     Route::get('/admin/logout','AdminController@logout')->name('admin.logout');
+    Route::get('/admin', 'AdminController@index')->name('admin');
+    Route::get('/user/{client_id}','AdminController@ShowUserPlans')->name('user.plans');
 
