@@ -15,7 +15,7 @@ class CreateCurrentPlansTable extends Migration
     {
         Schema::create('current_plans', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('client_id');
+            $table->unsignedBigInteger('user_client_id');
             $table->date('activated_date');
             $table->date('deactivated_date');
             // /$table->index('user_id');

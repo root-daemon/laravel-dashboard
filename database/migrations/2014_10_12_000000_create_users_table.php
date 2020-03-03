@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->integer('client_id');
-            $table->integer('mobile_number');
+            $table->string('mobile_number');
             $table->string('imeinum')->unique();
             //$table->string('current_plan');
             //$table->string('upcoming_plan')->nullable();

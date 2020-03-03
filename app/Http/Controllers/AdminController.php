@@ -31,7 +31,11 @@ class AdminController extends Controller
       }
       public function ShowUserPlans(Request $request, $client_id){
         $user = User::find($client_id);
-        dd($user->Plans());
-        return true;
+        //dd($user->Plans);
+        $plans = $user->Plans;
+        return view('plan',[
+            'user' => $user,
+            'plans' => $plans
+        ]);
       }
 }
