@@ -25,4 +25,4 @@ Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/admin/logout','AdminController@logout')->name('admin.logout');
     Route::get('/admin', 'AdminController@index')->name('admin');
     Route::get('/user/{client_id}','AdminController@ShowUserPlans')->name('user.plans');
-
+    //Route::get('/test','AdminController@test')->name('test');
