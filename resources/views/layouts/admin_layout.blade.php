@@ -75,7 +75,7 @@
                         <li class="has_sub">
                             <ul class="list-unstyled">
                                 <li><a href="#">Add New E-SIM</a></li>
-                                <li><a href="{{route('all_esim')}}">View all E-SIM Detail</a></li>
+                                <li><a href="#">View all E-SIM Detail</a></li>
                             </ul>
                         </li>
                         <li class="menu-title"><i class="mdi mdi-sim mr-2 font-size-i"></i><span> E-SIM Dashboard</span></li>
@@ -91,7 +91,7 @@
                         <li class="menu-title"><i class="mdi mdi-sim mr-2 font-size-i"></i><span>Client Dashboard</span></li>
                         <li class="has_sub">
                             <ul class="list-unstyled">
-                                <li><a href="">Add New Client</a></li>
+                                <li><a href="#">Add New Client</a></li>
                                 <li><a href="{{route('all_client')}}">View all Client</a></li>
                             </ul>
                         </li>
@@ -99,7 +99,7 @@
                         <li class="has_sub">
                             <ul class="list-unstyled">
                                 <li><a href="#">Add New Owner</a></li>
-                                <li><a href="">View all Owner</a></li>
+                                <li><a href="#">View all Owner</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -191,7 +191,8 @@
 <script src="{{URL::asset('assets/plugins/morris/morris.min.js')}}"></script>
 
 <script src="{{URL::asset('assets/pages/dashborad.js')}}"></script>
-
+<script src="{{URL::asset('assets/plugins/chart.js/chart.min.js')}}"></script>
+<script src="{{URL::asset('assets/pages/chartjs.init.js')}}"></script>
 <!-- App js -->
 <script src="{{URL::asset('assets/js/app.js')}}"></script>
 

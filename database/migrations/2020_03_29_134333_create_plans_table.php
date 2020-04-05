@@ -24,7 +24,9 @@ class CreatePlansTable extends Migration
             //$table->boolean('call')->default(0);
             $table->string('type');
             //$table->double('data_used',3,2)->nullable();
-            $table->double('data_limit',3,2)->nullable();
+            $table->integer('data_limit')->default(0);
+            $table->integer('call_limit')->default(0);
+            $table->integer('sms_limit')->default(0);
             $table->integer('pricing');
             $table->string('operator');
             $table->string('bandwith');

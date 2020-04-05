@@ -20,6 +20,10 @@ class CreateEsimsTable extends Migration
             $table->string('iccid1');
             $table->string('iccid2');
             $table->string('status');
+            $table->integer('data_used')->default(0);
+            $table->integer('sms_used')->default(0);
+            $table->integer('call_used')->default(0);
+            $table->integer('plan_id');
             $table->text('comments')->nullable();
             $table->timestamps();
         });

@@ -13,8 +13,8 @@ class EsimController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
+    {   $esims = Esim::orderBy('id','desc')->get();
+        return view('esim')->with('esims',$esims);
     }
 
     /**

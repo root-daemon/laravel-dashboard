@@ -50,7 +50,7 @@
                                     @foreach ($esims as $esim)
                                     <tr>
                                         <td>
-                                            {{$esim->msisiid}}
+                                            {{$esim->msisiidn}}
                                         </td>
                                         <td>
                                             {{$esim->iccid1}}
@@ -59,14 +59,18 @@
                                             {{$esim->iccid2}}
                                         </td>
                                         <td>
-                                            {{//$esim->plan->name
-                                            }}                                                                                                                                                                                                                     </td>
+                                        </td>
                                         <td>
                                             {{$esim->status}}
                                         </td>
                                         <td></td>
                                         <td>
-                                            <a href="#" class="btn btn-primary waves-effect waves-light">View</a>
+
+                                            <a href="{{route('test', $id = $esim->id)}}" class="">
+                                                <button type ="submit" class="btn btn-primary waves-effect waves-light">
+                                                    View
+                                                </button>
+                                            </a>
                                             <a href="#" class="btn btn-secondary waves-effect m-l-5">Edit</a>
                                             <a href="#" class="btn btn-danger">Delete</a>
                                         </td>
@@ -86,4 +90,4 @@
 
 </div> <!-- Page content Wrapper -->
 
-    @endsection
+@endsection
