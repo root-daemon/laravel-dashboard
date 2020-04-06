@@ -11,4 +11,10 @@ class ClientController extends Controller
 
         return view('clients-table')->with('clients',$clients);
     }
+    public function show(Request $request){
+        //dd($request->all());
+        $client = Client::find($request->client_id);
+        //dd($client);
+        return view('client-single')->with('client',$client);
+    }
 }

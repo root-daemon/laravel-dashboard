@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Plan;
 use App\Esim;
 use Illuminate\Http\Request;
 
@@ -24,7 +24,7 @@ class EsimController extends Controller
      */
     public function create()
     {
-        //
+        return view('forms/esim');
     }
 
     /**
@@ -35,7 +35,18 @@ class EsimController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+
+            Esim::create([
+                'msisiidn'=>$request->msisdn,
+                'device_id'=>$request->device_id,
+                'iccid1'=>$request->iccid1,
+                'iccid2'=>$request->iccid2,
+                'status'=>$request->status,
+                'comments'=>$request->comments
+            ]);
+
+        return redirect()->route('all_esim');
     }
 
     /**
@@ -44,11 +55,11 @@ class EsimController extends Controller
      * @param  \App\Esim  $esim
      * @return \Illuminate\Http\Response
      */
-    public function show(Esim $esim)
-    {
-        //
+    public function show(Request $request){
+        //dd($request->all());
+        $esim = Esim::find($request->esim_id);
+        return view('esim-single')->with('esim',$esim);
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -81,5 +92,13 @@ class EsimController extends Controller
     public function destroy(Esim $esim)
     {
         //
+    }
+    public function assignaplan(){
+        $plans = Plan::orderBy('id','desc')->get();
+        return view('forms/assign')->with('plans',$plans);
+    }
+    public function assign(Request $request){
+        dd($request->all());
+        return true;
     }
 }

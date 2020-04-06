@@ -10,6 +10,6 @@ class Owner extends Model
         return $this->belongsTo(Client::class);
     }
     public function device(){
-        return $this->hasMany(Device::class);
+        return $this->hasOne(Device::class);
     }
 }

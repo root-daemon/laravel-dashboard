@@ -34,65 +34,90 @@
                     <h5 class="card-title">E-Sim Details</h5>
                     <div class="row mt-4">
                         <div class="col-sm-4">
-                            <strong>MSISDN:</strong>
+                            <strong>MSISDN: </strong> {{$esim->msisiidn}}
+
                         </div>
                         <div class="col-sm-4">
-                            <strong>ICCID-1:</strong>
+                            <strong>ICCID-1: </strong>{{$esim->iccid1}}
                         </div>
                         <div class="col-sm-4">
-                            <strong>ICCID-2:</strong>
+                            <strong>ICCID-2: </strong>{{$esim->iccid2}}
                         </div>
                     </div>
                     <div class="row mt-4">
                         <div class="col-sm-4">
-                            <strong>E-SIM Status:</strong>
+                            <strong>E-SIM Status: </strong>{{$esim->status}}
                         </div>
                         <div class="col-sm-4">
-                            <strong>Owner-ID:</strong>
+                            <strong>Owner-ID: </strong>{{$esim->device->owner->id}}
                         </div>
                         <div class="col-sm-4">
-                            <strong>Device ID:</strong>
+                            <strong>Device ID: </strong>{{$esim->device->id}}
                         </div>
                     </div>
                     <div class="row mt-4">
                         <div class="col-sm-4">
-                            <strong>Client ID:</strong>
+                            <strong>Client ID: </strong>{{$esim->device->owner->client->client_id}}
                         </div>
                         <div class="col-sm-4">
-                            <strong>Invoice Id:</strong>
+                            <strong>Invoice Id: </strong>{{$esim->device->invoice_id}}
                         </div>
                         <div class="col-sm-4">
-                            <strong>Comments:</strong>
+                            <strong>Comments: </strong>{{$esim->comments}}
                         </div>
                     </div>
                     <div class="row mt-4">
                         <div class="col-sm-4">
-                            <strong>Assigned E-SIM :</strong>
+                            <strong>Assigned E-SIM : </strong>{{$esim->msisiidn}}
                         </div>
                         <div class="col-sm-4">
-                            <strong>Plan Active :</strong>
+                            <strong>Plan Active : </strong>
                         </div>
                         <div class="col-sm-4">
-                            <strong><a href="#" class="btn btn-default">Plan Modify</a></strong>
+                            <strong><a href="#" class="btn btn-primary">Plan Modify</a></strong>
                         </div>
                     </div>
                     <div class="row mt-4">
                         <div class="col-sm-4">
-                            <strong>Origin Country :</strong>
+                            <strong>Origin Country : </strong>{{$esim->device->owner->client->conuntry}}
                         </div>
                         <div class="col-sm-4">
-                            <strong>Current-Country:</strong>
+                            <strong>Current-Country: </strong>{{$esim->device->current_location}}
                         </div>
-                        <div class="col-sm-4">
-                            <a href="#">
-                                <button type="submit" class="btn btn-default">Generate PDF!</button>
-                            </a>
-                        </div>
+
                     </div>
                 </div>
             </div><!--end col-->
             <!--end col-->
         </div> <!--end row-->
+        <div class="row">
+            <div class="col-12">
+                <div class="card mr-5 ml-5 mb-5 p-5">
+                    <h4 class="card-title">Device Detials</h4>
+                    <hr>
+                    <div class="row mt-4">
+                        <div class="col-sm-4">
+                            <strong>Device Name :</strong> {{$esim->device->name}}
+                        </div>
+                        <div class="col-sm-4">
+                            <strong>IMEI-1 :</strong> {{$esim->device->imei1}}
+                        </div>
+                        <div class="col-sm-4">
+                            <strong>IMEI-2 : </strong> {{$esim->device->imei2}}
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-sm-4">
+                            <strong>LOT-ID : </strong> {{$esim->device->lot_id}}
+                        </div>
+                        <div class="col-sm-4">
+                            <strong>Invoice ID : </strong> {{$esim->device->invoice_id}}
+                        </div>
+                        <div class="col-sm-4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div><!-- container -->
 

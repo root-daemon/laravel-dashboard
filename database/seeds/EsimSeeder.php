@@ -16,7 +16,8 @@ class EsimSeeder extends Seeder
             'iccid1'=>'0000047',
             'iccid2'=>'0000045',
             'status'=>'active',
-            'device_id'=> '1'
+            'device_id'=> '1',
+            'plan_id'=>'1'
         ]);
     }
 }

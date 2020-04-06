@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Esim;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -15,7 +15,9 @@ class AdminController extends Controller
         return view('admin');
     }
     public function test(Request $request){
-        dd($request->all());
-        return view('chart');
+        //dd($request->all());
+        $esim = Esim::find($request->esim_id);
+        return view('esim-single')->with('esim',$esim);
     }
+
 }

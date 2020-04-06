@@ -15,7 +15,7 @@ class CreateEsimsTable extends Migration
     {
         Schema::create('esims', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('device_id');
+            $table->unsignedBigInteger('device_id')->nullable();
             $table->string('msisiidn');
             $table->string('iccid1');
             $table->string('iccid2');
@@ -23,7 +23,7 @@ class CreateEsimsTable extends Migration
             $table->integer('data_used')->default(0);
             $table->integer('sms_used')->default(0);
             $table->integer('call_used')->default(0);
-            $table->integer('plan_id');
+            $table->unsignedBigInteger('plan_id')->nullable();
             $table->text('comments')->nullable();
             $table->timestamps();
         });

@@ -40,7 +40,7 @@
                                         <th class="border-top-0">Registered Name</th>
                                         <th class="border-top-0">Registered Number</th>
                                         <th class="border-top-0">Contact Person</th>
-                                        <th class="border-top-0">Desingnation</th>
+                                        <th class="border-top-0">Designation</th>
                                         <th class="border-top-0">Contact Number</th>
                                         <th class="border-top-0">Actions</th>
                                     </tr>
@@ -49,42 +49,39 @@
                                     @foreach ($clients as $client)
                                     <tr>
                                         <td>
-                                            {{$client->name}}
+                                            {{$owner->name}}
                                         </td>
                                         <td>
-                                            {{$client->client_id}}
+                                            {{$owner->client_id}}
+                                        </td>
+
+                                        <td>
+                                            {{$owner->contact_person}}
                                         </td>
                                         <td>
-                                            {{$client->contact_person}}
+                                            {{$owner->designation}}                                                                                                                                                                                                                     </td>
+                                        <td>
+                                            {{$owner->contact_number}}
                                         </td>
                                         <td>
-                                            {{$client->designation}}                                                                                                                                                                                                                     </td>
-                                            <td>
-                                                {{$client->contact_number}}
-                                            </td>
-                                            <td>
-                                                <form action="{{route('single-client')}}" method="get" style="width: 35px, display: inline" >
-                                                    @csrf
-                                                    <input type="hidden" value="{{$client->client_id}}" name="client_id">
-                                                    <button type="submit"  style="width: 35px, height: 58.4px"  class="btn btn-primary waves-effect waves-light mr-2">View</button>
-                                                    <a href="#" class="btn btn-secondary waves-effect m-l-5">Edit</a>
-                                                    <a href="#" class="btn btn-danger">Delete</a>
-                                                </form>
-                                            </td>
+                                           <a href="#" class="btn btn-primary waves-effect waves-light">View</a>
+                                            <a href="#" class="btn btn-secondary waves-effect m-l-5">Edit</a>
+                                            <a href="#" class="btn btn-danger">Delete</a>]
+                                        </td>
                                     </tr>
-                                    @endforeach
+                                        @endforeach
 
-                                </tbody>
-                            </table>
-                        </div>
-                    </div><!--end card-body-->
-                </div><!--end card-->
-            </div><!--end col-->
-            <!--end col-->
-        </div> <!--end row-->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div><!--end card-body-->
+                    </div><!--end card-->
+                </div><!--end col-->
+                <!--end col-->
+            </div> <!--end row-->
 
-    </div><!-- container -->
+        </div><!-- container -->
 
-</div> <!-- Page content Wrapper -->
+    </div> <!-- Page content Wrapper -->
 
     @endsection

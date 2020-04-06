@@ -37,51 +37,58 @@
                             <table class="table table-hover mb-0">
                                 <thead>
                                     <tr>
-                                        <th class="border-top-0">Device Name</th>
-                                        <th class="border-top-0">IMEI 1</th>
-                                        <th class="border-top-0">IMEI -2</th>
-                                        <th class="border-top-0">ICCID -1</th>
-                                        <th class="border-top-0">ICCID -2</th>
-                                        <th class="border-top-0">Invoice ID</th>
-                                        <th class="border-top-0">Lot ID</th>
-                                        <th class="border-top-0">Esim Sales ID</th>
+                                        <th class="border-top-0">ID</th>
+                                        <th class="border-top-0">Name</th>
+                                        <th class="border-top-0">Plan Start</th>
+                                        <th class="border-top-0">Plan End</th>
+                                        <th class="border-top-0">Pack Validity</th>
+                                        <th class="border-top-0">Plan Type</th>
+                                        <th class="border-top-0">Pricing</th>
+                                        <th class="border-top-0">Operator</th>
+                                        <th class="border-top-0">Bandwith</th>
+                                        <th class="border-top-0">Download limit	</th>
+                                        <th class="border-top-0">Plan Status</th>
                                         <th class="border-top-0">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($devices as $device)
+                                    @foreach ($plans as $plan)
                                     <tr>
                                         <td>
-                                            {{$device->name}}
+                                            {{$plan->id}}
                                         </td>
                                         <td>
-                                            {{$device->imei1}}
+                                            {{$plan->name}}
                                         </td>
                                         <td>
-                                            {{$device->imei2}}
+                                            {{$plan->start}}
                                         </td>
                                         <td>
-                                            {{$device->esim->iccid1}}                                                                                                                                                                                                                     </td>
+                                            {{$plan->end}}                                                                                                                                                                                                                     </td>
                                         <td>
-                                            {{$device->esim->iccid2}}
+                                            {{$plan->validity}}
                                         </td>
                                         <td>
-                                            {{$device->invoice_id}}
+                                            {{$plan->type}}
                                         </td>
                                         <td>
-                                            {{$device->lot_id}}
+                                            {{$plan->pricing}}
                                         </td>
                                         <td>
-                                            {{$device->esim->msisiidn}}
+                                            {{$plan->operator}}
                                         </td>
                                         <td>
-                                            <form action="{{route('single-device')}}" method="get" style="width: 35px, display: inline" >
-                                                @csrf
-                                                <input type="hidden" value="{{$device->id}}" name="device_id">
-                                                <button type="submit"  style="width: 35px, height: 58.4px"  class="btn btn-primary waves-effect waves-light mr-2">View</button>
-                                                <a href="#" class="btn btn-secondary waves-effect m-l-5">Edit</a>
-                                                <a href="#" class="btn btn-danger">Delete</a>
-                                            </form>
+                                            {{$plan->bandwith}}
+                                        </td>
+                                        <td>
+                                            {{$plan->data_limit}}
+                                        </td>
+                                        <td>
+                                            {{$plan->status}}
+                                        </td>
+
+                                        <td>
+                                            <a href="#" class="btn btn-primary waves-effect waves-light">Assign Plan</a>
                                         </td>
                                     </tr>
                                     @endforeach

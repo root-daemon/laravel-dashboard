@@ -26,7 +26,7 @@ class DeviceController extends Controller
      */
     public function create()
     {
-        //
+        return view('forms/device');
     }
 
     /**
@@ -37,7 +37,18 @@ class DeviceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Device::create([
+            'name' => $request->DEVICE_NAME,
+            'owner_id'=>$request->client_id,
+            'imei1'=>$request->IMEI1,
+            'imei2'=>$request->IMEI2,
+            'lot_id'=>$request->lot_id,
+            'invoice_id'=>$request->invoice_id,
+            'status'=>$request->STATUS,
+            'current_location'=>$request->LOCATION,
+
+        ]);
+        return redirect( route('dashboard'));
     }
 
     /**
@@ -46,9 +57,10 @@ class DeviceController extends Controller
      * @param  \App\Device  $device
      * @return \Illuminate\Http\Response
      */
-    public function show(Device $device)
+    public function show(Request $request)
     {
-        //
+        $device = Device::find($request->device_id);
+        return view('device-single')->with('device',$device);
     }
 
     /**
@@ -83,5 +95,29 @@ class DeviceController extends Controller
     public function destroy(Device $device)
     {
         //
+    }
+    public function type(Request $request){
+        $type = $request->STATUS;
+        //dd($request->all());
+        if($type=='upcoming'){
+           // dd('gell');
+            return view('forms/device-upcoming')->with('STATUS',$type);
+        }
+        else if($type=='inventory'){
+            return view('forms/device-inventory')->with('STATUS',$type);
+        }
+        else if($type=='invoiced'){
+            return view('forms/device-invoiced')->with('STATUS',$type);
+        }
+        else if($type=='intransit'||$type=='delviredtoclient'){
+            return view('forms/device-intransit')->with('STATUS',$type);
+        }
+        else{
+            dd($type);
+        }
+    }
+    public function typeshow(){
+        return view('forms/device-type');
+
     }
 }

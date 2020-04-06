@@ -75,7 +75,7 @@
                         <li class="has_sub">
                             <ul class="list-unstyled">
                                 <li><a href="#">Add New E-SIM</a></li>
-                                <li><a href="#">View all E-SIM Detail</a></li>
+                                <li><a href="{{route('all_esim')}}">View all E-SIM Detail</a></li>
                             </ul>
                         </li>
                         <li class="menu-title"><i class="mdi mdi-sim mr-2 font-size-i"></i><span> E-SIM Dashboard</span></li>
@@ -99,7 +99,7 @@
                         <li class="has_sub">
                             <ul class="list-unstyled">
                                 <li><a href="#">Add New Owner</a></li>
-                                <li><a href="#">View all Owner</a></li>
+                                <li><a href="{{route('all_owners')}}">View all Owner</a></li>
                             </ul>
                         </li>
                     </ul>

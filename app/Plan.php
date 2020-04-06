@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Plan extends Model
 {
     public function esim(){
-        return $this->belongsTo(Esim::class);
+        return $this->hasMany(Esim::class);
     }
 }

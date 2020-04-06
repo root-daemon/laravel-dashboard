@@ -64,15 +64,16 @@
                                             {{$esim->status}}
                                         </td>
                                         <td></td>
-                                        <td>
+                                        <td  class="inline">
 
-                                            <a href="{{route('test', $id = $esim->id)}}" class="">
-                                                <button type ="submit" class="btn btn-primary waves-effect waves-light">
-                                                    View
-                                                </button>
-                                            </a>
-                                            <a href="#" class="btn btn-secondary waves-effect m-l-5">Edit</a>
-                                            <a href="#" class="btn btn-danger">Delete</a>
+                                            <form action="{{route('single-esim')}}" method="post" style="width: 35px, display: inline" >
+                                                @csrf
+                                                <input type="hidden" value="{{$esim->id}}" name="esim_id">
+                                                <button type="submit"  style="width: 35px, height: 58.4px"  class="btn btn-primary waves-effect waves-light mr-2">View</button>
+                                                <a href="#" class="btn btn-secondary waves-effect m-l-5">Edit</a>
+                                                <a href="#" class="btn btn-danger">Delete</a>
+                                            </form>
+
                                         </td>
                                     </tr>
                                     @endforeach

@@ -15,12 +15,12 @@ class CreateDevicesTable extends Migration
     {
         Schema::create('devices', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('owner_id');
+            $table->unsignedBigInteger('owner_id')->nullable();
             $table->string('name');
             $table->string('imei1');
             $table->string('imei2');
-            $table->integer('lot_id');
-            $table->integer('invoice_id');
+            $table->integer('lot_id')->nullable();
+            $table->integer('invoice_id')->nullable();
             $table->string('status');
             $table->string('current_location');
             $table->text('comments')->nullable();

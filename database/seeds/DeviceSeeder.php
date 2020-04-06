@@ -12,14 +12,15 @@ class DeviceSeeder extends Seeder
     public function run()
     {
         Device::create([
-            'owner_id'=>1,
+            //'owner_id'=>1,
             'name'=>'Macbook',
             'imei1' => '121212',
             'imei2' => '141414',
             'status'=>'upcoming',
             'invoice_id'=>909090,
             'lot_id'=>0215621,
-            'current_location'=>'India'
+            'current_location'=>'India',
+            'owner_id'=>1
         ]);
     }
 }
