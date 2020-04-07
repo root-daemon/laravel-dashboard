@@ -88,7 +88,11 @@
                                         </td>
 
                                         <td>
-                                            <a href="#" class="btn btn-primary waves-effect waves-light">Assign Plan</a>
+                                        <form action="{{route('plan_create')}}" method="GET">
+                                        <input type="hidden" name="plan_id" value="{{$plan->id}}">
+                                            <button type="submit" class="btn btn-primary waves-effect waves-light">Assign Plan</button>
+
+                                        </form>
                                         </td>
                                     </tr>
                                     @endforeach

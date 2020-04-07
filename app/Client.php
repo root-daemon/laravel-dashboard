@@ -13,4 +13,5 @@ class Client extends Model
    public function owner(){
        return $this->hasMany(Owner::class);
    }
+   protected $guarded = [];
 }

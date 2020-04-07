@@ -83,9 +83,6 @@
 
                             <ul class="list-unstyled">
                                 <li><a href="#">View Data Plan</a></li>
-                                <li><a href="#">View all Migration Requests</a></li>
-                                <li><a href="#">View all Activation Requests</a></li>
-                                <li><a href="#">View all Bar Requests</a></li>
                             </ul>
                         </li>
                         <li class="menu-title"><i class="mdi mdi-sim mr-2 font-size-i"></i><span>Client Dashboard</span></li>

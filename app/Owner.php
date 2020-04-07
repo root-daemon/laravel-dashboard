@@ -12,4 +12,5 @@ class Owner extends Model
     public function device(){
         return $this->hasOne(Device::class);
     }
+    protected $guarded = [];
 }
